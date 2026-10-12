@@ -1203,3 +1203,461 @@ footer {
     transition: none !important;
   }
 }
+/* Quantity inventory, cooking, and privacy controls */
+.workspace {
+  grid-template-columns: 390px minmax(0, 1fr);
+}
+.quantity-fields {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.quantity-fields label {
+  flex: 1;
+  font-size: 11px;
+  font-weight: 600;
+}
+.quantity-fields input,
+.quantity-fields select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dedfd4;
+  border-radius: 5px;
+  background: white;
+  margin-top: 6px;
+}
+.form-row select {
+  width: 135px;
+}
+.form-notice {
+  font-size: 11px;
+  color: #68835b;
+  margin-top: 8px;
+  min-height: 14px;
+}
+.inventory-shelves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+.inventory-section {
+  min-width: 0;
+  background: #f5f5ef;
+  border-radius: 7px;
+  padding: 10px;
+}
+.inventory-section-heading {
+  border-bottom: 1px solid #dedfd4;
+  padding-bottom: 10px;
+}
+.inventory-section-heading h3 {
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  line-height: 1.5;
+}
+.inventory-section-heading > span {
+  font-size: 10px;
+  color: #7b8972;
+}
+.quantity-item {
+  border-bottom: 1px solid #e1e4d7;
+  padding: 10px 0;
+}
+.quantity-item-heading {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.quantity-item-heading .ingredient-name {
+  overflow-wrap: anywhere;
+}
+.editable-quantity {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 5px;
+}
+.editable-quantity input {
+  width: 66px;
+  background: white;
+  border: 1px solid #d5dbcd;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 12px;
+}
+.editable-quantity > span {
+  font-size: 11px;
+  color: #7b8972;
+}
+.editable-quantity select {
+  width: 100%;
+  background: white;
+  border: 1px solid #d5dbcd;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 4px;
+}
+.shelf-empty {
+  padding: 16px 0;
+  font-size: 11px;
+  color: #7b8972;
+  line-height: 1.8;
+}
+.quantity-warning {
+  font-size: 11px;
+  color: #a65d40;
+  line-height: 1.7;
+  display: block;
+  margin-top: 6px;
+}
+.primary-button,
+.secondary-button {
+  padding: 11px 15px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.primary-button {
+  background: #37503b;
+  color: white;
+}
+.secondary-button {
+  border: 1px solid #b8c1aa;
+  color: #3c5335;
+  background: #fffefa;
+}
+.primary-button:hover {
+  background: #253c2a;
+}
+.secondary-button:hover {
+  background: #edf0e5;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.api-search-note {
+  background: #eef1e5;
+  border-radius: 9px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.api-search-note p {
+  font-size: 12px;
+  color: #708063;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.error-message {
+  border: 1px solid #e7c5b3;
+  background: #fff3ec;
+  color: #9b513a;
+  padding: 12px;
+  font-size: 12px;
+  line-height: 1.8;
+  border-radius: 6px;
+  margin: 14px 0;
+}
+.undo-note {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+  font-size: 11px;
+  color: #758969;
+  padding: 12px;
+  background: #f0f3e9;
+  border-radius: 6px;
+}
+.undo-note button {
+  align-self: start;
+  background: none;
+  color: #a96548;
+  padding: 0;
+  text-decoration: underline;
+}
+.privacy-banner {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 22px;
+  border: 1px solid #dde3d0;
+  border-radius: 9px;
+  background: #f0f2e8;
+  margin-bottom: 28px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.privacy-banner p {
+  color: #76816c;
+  font-size: 11px;
+}
+.privacy-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.privacy-banner .secondary-button {
+  font-size: 11px;
+}
+.privacy-link {
+  background: none;
+  color: #637654;
+  font-size: 11px;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.privacy-dialog {
+  width: min(650px, calc(100% - 28px));
+  max-height: 90svh;
+  position: relative;
+  border: 0;
+  border-radius: 14px;
+  padding: 32px;
+  background: #fffefa;
+}
+.privacy-dialog::backdrop {
+  background: #263c2fcc;
+  backdrop-filter: blur(4px);
+}
+.privacy-dialog h2 {
+  margin: 13px 0 20px;
+}
+.privacy-dialog h3 {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 400;
+  margin: 25px 0 12px;
+}
+.privacy-dialog p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #6b7f60;
+  margin-bottom: 14px;
+}
+.privacy-dialog .privacy-choices {
+  margin-bottom: 13px;
+}
+.privacy-choices [aria-pressed="true"] {
+  background: #e2ebd9;
+  border-color: #7f966c;
+}
+.danger-button {
+  color: #aa593a;
+  border-color: #d9b89d;
+}
+.delete-confirm {
+  padding: 15px;
+  background: #fff0e5;
+  border-radius: 7px;
+  margin-top: 14px;
+}
+.delete-confirm button {
+  margin: 4px;
+}
+.servings-control {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.servings-control input {
+  width: 60px;
+  border: 1px solid #d5dbcd;
+  border-radius: 4px;
+  padding: 6px;
+  background: white;
+}
+.deduction-rows {
+  margin-top: 16px;
+}
+.deduction-row {
+  padding: 17px 0;
+  border-bottom: 1px solid #e1e4d7;
+}
+.deduction-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.deduction-heading strong {
+  font-weight: 600;
+  font-size: 13px;
+}
+.deduction-heading small {
+  font-size: 11px;
+  color: #8a967f;
+}
+.deduction-row label {
+  display: block;
+  font-size: 11px;
+  color: #6b7f60;
+  margin-top: 10px;
+}
+.deduction-row select {
+  display: block;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #d5dbcd;
+  border-radius: 5px;
+  background: #f8f9f2;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.deduction-amount {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 10px;
+}
+.deduction-amount label {
+  max-width: 130px;
+}
+.deduction-amount input {
+  display: block;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #d5dbcd;
+  border-radius: 5px;
+  margin-top: 5px;
+  background: white;
+}
+.deduction-amount > span {
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+.deduction-amount > small {
+  font-size: 10px;
+  color: #8a967f;
+  margin-bottom: 10px;
+}
+.deduction-amount .quantity-warning {
+  width: 100%;
+}
+.deduction-row > .small {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #8a967f;
+}
+.external-confirm {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  font-size: 12px;
+  color: #718563;
+  line-height: 1.7;
+  margin-top: 19px;
+}
+.external-confirm input {
+  margin-top: 3px;
+  accent-color: #37503b;
+}
+.cooking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+.cooking-success {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  padding: 15px;
+  background: #e8f1df;
+  border-radius: 7px;
+  color: #5b754b;
+  margin-top: 20px;
+}
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #a97050;
+  font-size: 12px;
+  text-decoration: underline;
+  margin: 12px 0;
+}
+.recipe-credit {
+  margin-top: 20px;
+}
+.recipe-dialog .small {
+  font-size: 11px;
+  color: #748769;
+  line-height: 1.8;
+}
+@media (min-width: 1350px) {
+  .recipe-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .card-body h3 {
+    font-size: 21px;
+  }
+  .card-image {
+    height: 185px;
+  }
+}
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 22px;
+  }
+  .privacy-banner {
+    flex-wrap: wrap;
+  }
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 800px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  .recipe-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .kitchen-panel {
+    padding: 23px;
+  }
+  .inventory-section {
+    padding: 15px;
+  }
+  .editable-quantity select {
+    width: auto;
+  }
+  .privacy-banner {
+    padding: 17px;
+  }
+  .privacy-link {
+    padding: 0;
+  }
+  .privacy-dialog {
+    padding: 25px;
+  }
+  .privacy-banner .privacy-choices {
+    width: 100%;
+  }
+}
+@media (max-width: 390px) {
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+  .card-body h3 {
+    min-height: 0;
+  }
+  .card-body > p {
+    min-height: 0;
+  }
+  .inventory-section {
+    padding: 10px;
+  }
+}
