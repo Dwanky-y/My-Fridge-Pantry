@@ -1,16 +1,36 @@
-# React + Vite
+# Little Pantry
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React app that turns fridge, pantry, and freezer ingredients into recipe ideas.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Use Node.js 24 (or a Vite-compatible version: Node 20.19+ or 22.12+).
 
-## React Compiler
+```sh
+npm ci
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+- Add one ingredient or a comma-separated list and choose its storage location.
+- Remove ingredients or filter your kitchen by location.
+- Automatically save inventory in localStorage, including across browser restarts.
+- Rank 10 included recipes by the proportion of ingredients you have.
+- Filter recipes ready to cook, find meals taking 30 minutes or less, or search.
+- Open each recipe for quantities, missing ingredients, servings, and instructions.
+- Responsive layouts, keyboard-accessible recipe dialogs, and reduced-motion support.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Inventory stays in the same browser profile and site origin; it does not sync across devices. Clearing browser data removes it. Private browsing may discard it when closed. If browser storage is unavailable, the app displays a warning and continues working for that session.
+
+Recipe matching recognizes common aliases, such as spaghetti/pasta and eggs/egg. It checks ingredient names rather than available amounts; check quantities before cooking. Water is assumed available, and salt and pepper are optional. Recipes are bundled with the app and require no external API or credentials.
+
+## Validate
+
+```sh
+npm run build
+npm run lint
+node --test src/recipes.test.js
+```
+
+The unit checks cover matching, missing ingredients, saved-data validation, and recipe completeness. For a browser smoke check, add `pasta, tomatoes, garlic, olive oil`, confirm the pasta recipe is ready, open its instructions, close and reopen the browser to confirm persistence, then remove garlic and confirm it is missing from that recipe. Also check the app at a narrow mobile viewport.
