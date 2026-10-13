@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-copy">
         <span className="eyebrow">
-          <span /> GOOD FOOD STARTS AT HOME
+          <span />
         </span>
         <h1>
           Create something delicious<span className="brand-period">.</span> 
@@ -13,7 +13,7 @@ export default function Hero() {
           <em>Already in your kitchen</em>
         </h1>
         <p>
-          Give your everyday ingredients a little inspiration.
+          Give what's already in your fridge a shot
           <br /> Fill your kitchen, find your next favorite meal.
         </p>
       </div>

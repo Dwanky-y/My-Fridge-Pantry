@@ -10,9 +10,9 @@ export default function SiteHeader() {
       </a>
       <nav aria-label="Main navigation">
         <a className="active" href="#kitchen">
-          My kitchen
+          My Kitchen
         </a>
-        <a href="#recipes">Recipe ideas</a>
+        {/* <a href="#recipes">Recipe ideas</a> */}
       </nav>
     </header>
   );

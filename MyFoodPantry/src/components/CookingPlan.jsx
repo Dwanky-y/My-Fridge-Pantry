@@ -176,14 +176,7 @@ export default function CookingPlan({
             disabled={Boolean(validation) || (external && !externalConfirmed)}
             onClick={cook}
           >
-            Start cooking & deduct
-          </button>
-          <button
-            className="secondary-button"
-            disabled={Boolean(validation) || (external && !externalConfirmed)}
-            onClick={cook}
-          >
-            I’ve made this · deduct
+            Finished Cooking
           </button>
         </div>
       )}
