@@ -8,26 +8,22 @@ export default function Hero() {
           <span /> GOOD FOOD STARTS AT HOME
         </span>
         <h1>
-          Something delicious.
+          Create something delicious<span className="brand-period">.</span> 
           <br />
-          <em>Already in your kitchen.</em>
+          <em>Already in your kitchen</em>
         </h1>
         <p>
           Give your everyday ingredients a little inspiration.
           <br /> Fill your kitchen, find your next favorite meal.
         </p>
-        <a href="#kitchen" className="hero-link">
-          Let’s see what’s cooking <Icon name="arrow" size={18} />
-        </a>
       </div>
       <div className="hero-illustration" aria-hidden="true">
-        <span className="floating-label label-one">a pinch of possibility</span>
-        <div className="hero-circle">
+        {/* <div className="hero-circle">
           <FoodArt type="salad" />
         </div>
         <span className="floating-label label-two">
           <Icon name="leaf" size={16} /> made with what you have
-        </span>
+        </span> */}
         <span className="spark spark-one">✧</span>
         <span className="spark spark-two">✳</span>
       </div>

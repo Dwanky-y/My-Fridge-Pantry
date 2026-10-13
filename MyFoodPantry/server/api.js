@@ -1,4 +1,6 @@
 // Server-only: never return the API key or upstream error bodies to the browser.
+//MyFoodPantry\.env.example
+
 export function createApiHandler({
   getKey = () => process.env.SPOONACULAR_API_KEY,
   fetcher = fetch,
@@ -59,7 +61,7 @@ export function createApiHandler({
     if (!key)
       return respond(503, {
         error:
-          "Recipe service is not configured. Set SPOONACULAR_API_KEY on the server.",
+          "Recipe service is not configured. Add SPOONACULAR_API_KEY to .env.local or your server environment, then restart the server.",
       });
     if (Date.now() - windowStart > 60000) {
       windowStart = Date.now();

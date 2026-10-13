@@ -6,7 +6,7 @@ export default function SiteHeader() {
         <span className="brand-icon">
           <Icon name="leaf" size={26} />
         </span>
-        little pantry<span className="brand-period">.</span>
+        MyFridgePantry<span className="brand-period">.com</span>
       </a>
       <nav aria-label="Main navigation">
         <a className="active" href="#kitchen">
@@ -14,9 +14,6 @@ export default function SiteHeader() {
         </a>
         <a href="#recipes">Recipe ideas</a>
       </nav>
-      <span className="header-note">
-        <span className="status-dot" /> A little less waste. A lot more taste.
-      </span>
     </header>
   );
 }
