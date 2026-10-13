@@ -4,7 +4,7 @@ A React app for quantity-aware fridge/freezer and pantry inventory, with Spoonac
 
 ## Setup
 
-Use Node.js 24 (the server uses built-in environment-file and HTTPS-proxy support).
+Use Node.js 20.19+ or 22.12+ (Node 24 is also supported). Startup automatically enables HTTPS-proxy support when your Node version provides it; older supported versions start without that optional flag. On older versions, use direct API network access or upgrade to Node 24 if your host requires an environment-configured HTTPS proxy.
 
 ```sh
 npm ci

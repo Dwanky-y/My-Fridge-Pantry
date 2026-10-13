@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node --use-env-proxy node_modules/vite/bin/vite.js",
+    "dev": "node scripts/run.js dev",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "node --use-env-proxy node_modules/vite/bin/vite.js preview",
-    "start": "node --use-env-proxy server/index.js",
+    "preview": "node scripts/run.js preview",
+    "start": "node scripts/run.js start",
     "test": "node --test src/lib/*.test.js server/*.test.js"
   },
   "dependencies": {
