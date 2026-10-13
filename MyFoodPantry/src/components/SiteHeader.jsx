@@ -2,6 +2,7 @@ import Icon from "./Icon";
 export default function SiteHeader() {
   return (
     <header className="site-header">
+      <title>My Fridge Pantry</title>
       <a className="brand" href="#">
         <span className="brand-icon">
           <Icon name="leaf" size={26} />

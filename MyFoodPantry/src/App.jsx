@@ -24,14 +24,14 @@ export default function App() {
         <section className="bottom-note">
           <Icon name="leaf" size={24} />
           <p>
-            Good for your plate. <span>Better for the planet.</span>
+            Create something great with what you have
           </p>
-          <small>Small kitchen habits make a big difference.</small>
+          <small>...</small>
         </section>
       </main>
       <footer>
         <a className="footer-brand" href="#">
-          little pantry.
+          MyFridgePantry<span className="brand-period">.com</span>
         </a>
         <span>Make the most of what you have.</span>
         <span>

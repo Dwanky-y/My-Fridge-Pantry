@@ -35,7 +35,7 @@ function PrivacyDialog({ kitchen, onClose }) {
       <span className="eyebrow">YOUR KITCHEN, YOUR CHOICE</span>
       <h2 id="privacy-title">Privacy & saved data</h2>
       <p>
-        Little Pantry uses no cookies, analytics, advertising trackers, or
+        MyFridgePantry uses no cookies, analytics, advertising trackers, or
         external fonts. You can use it without saving anything.
       </p>
       <h3>Remembering your kitchen</h3>
