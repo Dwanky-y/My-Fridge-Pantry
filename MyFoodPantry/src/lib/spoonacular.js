@@ -1,6 +1,19 @@
 export async function apiRequest(path, signal) {
   const response = await fetch(path, { signal });
-  const body = await response.json();
+  const contentType = response.headers.get("content-type") || "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    throw new Error(
+      "The recipe endpoint returned a web page instead of JSON. On Netlify, deploy the recipe function and API routing from netlify.toml, then set SPOONACULAR_API_KEY for Functions and redeploy.",
+    );
+  }
+  let body;
+  try {
+    body = await response.json();
+  } catch {
+    throw new Error(
+      "The recipe service returned invalid JSON. Please try again later.",
+    );
+  }
   if (!response.ok) throw new Error(body.error || "Could not load recipes.");
   return body;
 }

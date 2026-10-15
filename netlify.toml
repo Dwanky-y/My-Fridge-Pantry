@@ -1,0 +1,25 @@
+[build]
+  base = "MyFoodPantry"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# API rules must come before any single-page application fallback.
+[[redirects]]
+  from = "/api/recipes"
+  to = "/.netlify/functions/recipes"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/recipes/*"
+  to = "/.netlify/functions/recipes/:splat"
+  status = 200
+  force = true
+

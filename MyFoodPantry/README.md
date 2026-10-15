@@ -30,6 +30,17 @@ The Node server serves `dist` and the same API handler. Configure `SPOONACULAR_A
 
 The server distinguishes missing configuration, invalid API keys, exhausted quota, and connectivity errors. Requests time out after 15 seconds. A process-wide cap of 30 requests per minute limits accidental repeated usage; it is not a substitute for hosting-level abuse protection for a public deployment. Recipe requests are deliberately user-triggered to avoid automatically consuming quota with each inventory edit.
 
+## Netlify deployment
+
+Netlify needs both the Vite build and the recipe function. Deploying only `dist` through drag-and-drop omits the server endpoint and can return HTML to `/api/recipes`.
+
+1. Connect Netlify to the GitHub repository and deploy the latest `main` commit. The repository-root `netlify.toml` sets base directory `MyFoodPantry`, build command `npm run build`, publish directory `dist`, and functions directory `netlify/functions`.
+2. In the Netlify site's environment variables, add `SPOONACULAR_API_KEY` with **Functions** scope and a value for **Production** (and preview contexts if needed). Enter the value securely in Netlify; local `.env.local` and Codex environment settings do not transfer to Netlify. Never add the key to `netlify.toml` or use a `VITE_` name.
+3. Trigger a new deploy after adding or changing the variable. Confirm the deploy includes the `recipes` function. The API redirects must remain ahead of any SPA fallback such as `/* /index.html 200`; remove conflicting earlier API redirects from other configuration.
+4. Open `/api/recipes?ingredients=egg` on the deployed domain. It should return JSON: recipe data when configured, or a clear JSON diagnostic for missing keys, quota limits, or vendor failures. Opening a recipe uses `/api/recipes/<id>` through the same function.
+
+The function reuses `server/api.js` and keeps the API key server-side. The request limit is per warm function instance; serverless instances do not share counters. An HTML response indicates a deployment/routing problem, not an invalid Spoonacular key. The app now explains that condition without showing a raw JSON parse error.
+
 ## App structure
 
 - `src/App.jsx`: composition only.
